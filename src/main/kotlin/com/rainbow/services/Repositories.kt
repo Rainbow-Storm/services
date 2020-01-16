@@ -7,22 +7,22 @@ import org.springframework.data.mongodb.core.query.isEqualTo
 
 class UserRepository(private val mongo: ReactiveFluentMongoOperations) {
 
-    fun findAll() = mongo.query<User>().flow()
+    fun queryAll() = mongo.query<User>().flow()
 
-    suspend fun findOne(id: String) = mongo.query<User>().matching(query(where("id").isEqualTo(id))).awaitOne()
+    suspend fun queryById(id: String) = mongo.query<User>().matching(query(where("id").isEqualTo(id))).awaitOne()
 
     suspend fun insert(user: User) = mongo.insert<User>().oneAndAwait(user)
 
-    suspend fun update(user: User) = mongo.update<User>().replaceWith(user).asType<User>().findReplaceAndAwait()!!
 
 }
 
 class CourseRepository(private val mongo: ReactiveFluentMongoOperations) {
 
-    suspend fun findOne(id: String) = mongo.query<Course>().matching(query(where("id").isEqualTo(id))).awaitOne()
+    suspend fun queryById(id: String) = mongo.query<Course>().matching(query(where("id").isEqualTo(id))).awaitOne()
 
     suspend fun insert(course: Course) = mongo.insert<Course>().oneAndAwait(course)
+    suspend fun update(course: Course) = mongo.update<Course>().replaceWith(course).asType<Course>().findReplaceAndAwait()
 
-    suspend fun findAll() = mongo.query<Course>().flow()
+    suspend fun queryAll() = mongo.query<Course>().flow()
 
 }

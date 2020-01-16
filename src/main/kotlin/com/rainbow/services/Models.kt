@@ -2,6 +2,7 @@ package com.rainbow.services
 
 import org.springframework.data.annotation.Id
 import org.springframework.data.mongodb.core.mapping.Document
+import reactor.core.publisher.Operators
 
 @Document
 data class User(
@@ -17,5 +18,10 @@ data class Course(
         val title: String,
         val description: String,
         val createBy: String,
-        val questions: List<String>
+        val questions: List<String>,
+        var subscription: Subscription?
+)
+
+class Subscription(
+    val subscribers: MutableList<String> = mutableListOf()
 )

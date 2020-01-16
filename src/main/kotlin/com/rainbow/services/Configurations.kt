@@ -19,6 +19,7 @@ val webConfig = configuration {
     beans {
         bean<UserHandler>()
         bean<CourseHandler>()
+        bean<SubscriptionHandler>()
         bean(::routes)
     }
     webFlux {

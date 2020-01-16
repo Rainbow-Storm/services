@@ -8,7 +8,7 @@ Content-Type: application/json
 
 ###
 
-GET http://localhost:8080/api/user/{{$uuid}}
+GET http://localhost:8080/api/user/{{$userId}}
 Accept: application/json
 
 ###
