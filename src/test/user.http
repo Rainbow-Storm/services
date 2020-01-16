@@ -1,0 +1,14 @@
+POST http://localhost:8080/api/user
+Content-Type: application/json
+
+{
+  "phone": "{{$phone}}",
+  "nickname": "qinyu"
+}
+
+###
+
+GET http://localhost:8080/api/user/{{$uuid}}
+Accept: application/json
+
+###
