@@ -9,6 +9,13 @@ data class User(
         val phone: String,
         val nickname: String,
         val avatar: String?
-) {
-    constructor(phone: String, nickname: String) : this(null, phone, nickname, null)
-}
+)
+
+@Document
+data class Course(
+        @Id val id: String?,
+        val title: String,
+        val description: String,
+        val createBy: String,
+        val questions: List<String>
+)

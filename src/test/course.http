@@ -1,0 +1,35 @@
+POST http://localhost:8080/api/course
+Content-Type: application/json
+
+{
+  "title": "CAC管理教练特种兵计划",
+  "description": "CAC管理教练特种兵计划日常作业",
+  "questions": [
+    "《敏捷教练培养的“守、破、离”》读后感​",
+    "《培养“教练团队”为什么是敏捷转型中的必经之路》读后感",
+    "文化轰炸",
+    "站会总有人迟到怎么破？",
+    "文化解读之“求责于己”实例化",
+    "结合实践案例分享需求梳理过程中遇到的困难和解决方案",
+    "《Scrum看板相得益彰》读书笔记",
+    "《Scrum精髓》读书笔记",
+    "深度思考：如何提高质量",
+    "AC验收条件作业分享",
+    "《如何构建敏捷项目管理团队》读书笔记",
+    "关于“度量”",
+    "STAR模型"
+  ],
+  "createBy":"5e1fb8c0abbc5a766969acd5"
+}
+
+###
+
+GET http://localhost:8080/api/course
+Accept: application/json
+
+###
+
+GET http://localhost:8080/api/course/5e1fd5dc26f65b7d81bb11f6
+Accept: application/json
+
+###
